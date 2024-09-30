@@ -5,6 +5,7 @@
 
 // Compile command : gcc -I src/include -L src/lib -o main Fractales.c -lmingw32 -lSDL2main -lSDL2
 // Execute : ./main
+//
 
 int main( int argc, char* argv[] )
 {
