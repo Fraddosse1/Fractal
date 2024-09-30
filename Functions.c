@@ -37,17 +37,15 @@ void DrawPixelColor(SDL_Renderer* Render, int iMax, int i, int c, int l)
     Uint8 B = 0;
     Uint8 A = 255;
     
-    if(i<iMax )
+    if(i<iMax && i>20)
     {
-        double t = (double)(i/iMax);
-
-        float KR = (2*M_PI)/70;
-        float KG = (2*M_PI)/100;
-        float KB = (2*M_PI)/100;
+        float KR = (2*M_PI)/50; // /50
+        float KG = (2*M_PI)/50;
+        float KB = (2*M_PI)/50;
 
         R = (Uint8)((255/2) * (1 + sin(KR*i)));
-        G = (Uint8)((255/5) * (1 + sin(KG*i + M_PI/2)));
-        B = 0; //(Uint8)((255/2) * (1 + sin(KB*i + M_PI)));
+        G = (Uint8)((255/2) * (1 + sin(KG*i + M_PI/2)));
+        B = (Uint8)((255/2) * (1 + sin(KB*i + M_PI)));
     }
 
     SDL_SetRenderDrawColor(Render, R, G, B, A);
