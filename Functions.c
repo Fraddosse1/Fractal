@@ -49,7 +49,6 @@ void DrawPixelColor(SDL_Renderer* Render, int iMax, int i, int c, int l)
     }
 
     SDL_SetRenderDrawColor(Render, R, G, B, A);
-
     SDL_RenderDrawPoint(Render, c, l);
 }
 
@@ -67,4 +66,6 @@ void RenderFractal(SDL_Renderer* Render, int iMax, int H, int W, float Xmax, flo
             DrawPixelColor(Render, iMax, Sequence(z, iMax), c, l);
         }
     }
+    
+    SDL_RenderPresent(Render);
 }

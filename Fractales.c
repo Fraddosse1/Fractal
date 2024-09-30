@@ -32,9 +32,8 @@ int main( int argc, char* argv[] )
         exit(EXIT_FAILURE);
     }
 
-    RenderFractal(Render, 1000, 1080, 1920, 1.2, -2.2, 1.2, -1.2);
-    SDL_RenderPresent(Render);
-    printf("> End of generation\n");
+    RenderFractal(Render, 1000, 1080, 1920, 1, -2, 1, -1); // 1.2, -2.2, 1.2, -1.2
+    printf("> Generation completed\n");
 
     int Run = 1;
     SDL_Event Event;
@@ -45,6 +44,12 @@ int main( int argc, char* argv[] )
         {
             if(Event.type == SDL_QUIT)
                 Run = 0;
+            
+            if(Event.type == SDL_KEYDOWN)
+            {
+                if(Event.key.keysym.sym == SDLK_ESCAPE)
+                    Run = 0;
+            }
         }
     }
 
