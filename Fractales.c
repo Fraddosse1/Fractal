@@ -5,7 +5,6 @@
 
 // Compile command : gcc -I src/include -L src/lib -o main Fractales.c -lmingw32 -lSDL2main -lSDL2
 // Execute : ./main
-//
 
 int main( int argc, char* argv[] )
 {
@@ -35,6 +34,7 @@ int main( int argc, char* argv[] )
 
     RenderFractal(Render, 500, 1080, 1920, 1, -2, 1, -1);
     SDL_RenderPresent(Render);
+    printf("> End of generation\n");
 
     int Run = 1;
     SDL_Event Event;
