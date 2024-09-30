@@ -32,7 +32,7 @@ int main( int argc, char* argv[] )
         exit(EXIT_FAILURE);
     }
 
-    RenderFractal(Render, 500, 1080, 1920, 1, -2, 1, -1);
+    RenderFractal(Render, 1000, 1080, 1920, 1.2, -2.2, 1.2, -1.2);
     SDL_RenderPresent(Render);
     printf("> End of generation\n");
 
