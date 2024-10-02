@@ -13,7 +13,7 @@ void InitSDL(SDL_Window** Window, SDL_Renderer** Render)
         exit(EXIT_FAILURE);
     }
 
-    *Window = SDL_CreateWindow("Première fenêtre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, 0);
+    *Window = SDL_CreateWindow("Première fenêtre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, W, H, SDL_WINDOW_FULLSCREEN);
 
     if(!(*Window))
     {
