@@ -9,34 +9,14 @@
 int main( int argc, char* argv[] )
 {
     SDL_Window *window = NULL;
-
-    if(SDL_Init(SDL_INIT_VIDEO) != 0)
-    {
-        SDL_Log("ERREUR : Initialisation SDL > %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-
-    window = SDL_CreateWindow("Première fenêtre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, 0);
-
-    if(!window)
-    {
-        SDL_Log("ERREUR : Initialisation SDL > %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-
-    SDL_Renderer *Render = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-
-    if(!Render)
-    {
-        SDL_Log("Erreur : Initialisation Renderer > %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-
-    RenderFractal(Render, 1000, 1080, 1920, 1, -2, 1, -1); // 1.2, -2.2, 1.2, -1.2
-    printf("> Generation completed\n");
-
-    int Run = 1;
+    SDL_Renderer *Render = NULL;
     SDL_Event Event;
+    int Run = 1;
+
+    InitSDL(&window, &Render);
+
+    RenderFractal(Render);
+    printf("> Generation completed\n\n");
 
     while(Run)
     {
