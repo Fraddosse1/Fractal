@@ -3,13 +3,14 @@
 
 #include <complex.h>
 
-#define H 1080       // Height of the screen resolution
-#define W 1920       // Width of the screen resolution
-#define iMax 10000     // Maximum iterations
-#define Xmax 1.0       // Maximum coordinate on the X-axis ( !FLOAT VALUE! )
-#define Xmin -2.0      // Minimum coordinate on the X-axis ( !FLOAT VALUE! )
-#define Ymax 1.0       // Maximum coordinate on the Y-axis ( !FLOAT VALUE! )
-#define Ymin -1.0      // Minimum coordinate on the Y-axis ( !FLOAT VALUE! )
+#define DEFAULT_H 1080       // Default Height of the screen resolution
+#define DEFAULT_W 1920       // Default Width of the screen resolution
+#define iMax 2000            // Maximum iterations
+#define Xmax 1.0             // Maximum coordinate on the X-axis ( !FLOAT VALUE! )
+#define Xmin -2.0            // Minimum coordinate on the X-axis ( !FLOAT VALUE! )
+#define Ymax 1.0             // Maximum coordinate on the Y-axis ( !FLOAT VALUE! )
+#define Ymin -1.0            // Minimum coordinate on the Y-axis ( !FLOAT VALUE! )
+#define MONITOR_INDEX 0      // Index of the monitor that you want to use
 
 /*
     Init_SDL :

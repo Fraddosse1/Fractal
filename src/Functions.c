@@ -9,6 +9,8 @@
     #define M_PI 3.14159265358979323846
 #endif
 
+SDL_DisplayMode dm;
+
 void InitSDL(SDL_Window** Window, SDL_Renderer** Render)
 {
     if(SDL_Init(SDL_INIT_VIDEO) != 0)
@@ -17,7 +19,15 @@ void InitSDL(SDL_Window** Window, SDL_Renderer** Render)
         exit(EXIT_FAILURE);
     }
 
-    *Window = SDL_CreateWindow("Première fenêtre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, W, H, SDL_WINDOW_FULLSCREEN);
+    if(SDL_GetCurrentDisplayMode(MONITOR_INDEX, &dm) != 0){
+        SDL_Log("ERROR : Couldn't get the monitors display > %s\n", SDL_GetError());
+        
+        // Default Height and Width in case the monitors display couldn't be obtained
+        dm.h = DEFAULT_H;
+        dm.w = DEFAULT_W;
+    }
+
+    *Window = SDL_CreateWindow("Fractal", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, dm.w, dm.h, SDL_WINDOW_FULLSCREEN);
 
     if(!(*Window))
     {
@@ -37,7 +47,7 @@ void InitSDL(SDL_Window** Window, SDL_Renderer** Render)
 
 double complex PixelConvert(int Px, int Py)
 {
-    return (Px*((Xmax - Xmin)/W) + Xmin) + (Py*((Ymax - Ymin)/H) + Ymin)*I;;
+    return (Px*((Xmax - Xmin)/dm.w) + Xmin) + (Py*((Ymax - Ymin)/dm.h) + Ymin)*I;;
 }
 
 float VectNorm(double complex z)
@@ -86,9 +96,9 @@ void RenderFractal(SDL_Renderer* Render)
     int l, c;
     double complex z = 0;
 
-    for(l=0; l<H; l++)
+    for(l=0; l<dm.h; l++)
     {
-        for(c=0; c<W; c++)
+        for(c=0; c<dm.w; c++)
         {    
             z = PixelConvert(c, l);
             DrawPixelColor(Render, Sequence(z), c, l);

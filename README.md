@@ -12,17 +12,33 @@ Generation with 10 000 iterations
 ## Tech Stack
 ### Language
 C
+
 ### Libraries
 SDL2
+
 ### Graphics API
 OpenGL
+
 ### Build System/Tools
 - CMake
 - GCC compiler
 - VsCode IDE
+
 ### Operating Systems
 - Linux
 - Windows
+
+## Project structure
+.
+├── CMakeLists.txt
+├── include
+│   └── Functions.h
+├── README.md
+├── results
+│   └── Fractale_generation.png
+└── src
+    ├── Functions.c
+    └── main.c
 
 ## How to use ?
 The CMakeLists file already includes a fetching functionnality in case SDL2 isn't already installed in your computer.
@@ -33,11 +49,13 @@ cmake --build build     # compile
 ```
 
 Before running, you may need to pay attention to the number of iterations defined in the include/Functions.h directory.
-The default number of iterations has been set to 10 000 (for fun lol) but you can set it to whichever value you want (200 iterations is a good starting point).
+The default number of iterations has been set to 2000 but you can set it to whichever value you want (200 iterations is a good starting point).
+You can also change the default monitor to display the generation on by changing the defined value of **MONITOR_INDEX** in the **Functions.h** file.
 After fixing the number of iterations, you can run the generation using this command :
 ```
 ./build/Fractale        # run
 ```
+
 ## Dependencies
 ```
 SDL2 >= 2.30.0     # Used as graphic library
