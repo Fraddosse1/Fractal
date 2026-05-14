@@ -4,7 +4,9 @@ Simple fractale generator built with C and SDL2 library.
 ## Results
 ### Mandelbrot
 Iterative formula of the Mandelbrot set
-$$z_{n+1} = z_n^2 + c$$
+$$
+z_{n+1} = z_n^2 + c
+$$
 
 Generation with 10 000 iterations
 ![Mandelbrot set 800 iterations](./results/Fractale_generation.png)
@@ -40,6 +42,6 @@ After fixing the number of iterations, you can run the generation using this com
 ```
 ## Dependencies
 ```
-SDL2 >= 2.30.0
+SDL2 >= 2.30.0     # Used as graphic library
 lim                # For complex math functions (csqrt, etc)
 ```
