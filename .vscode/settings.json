@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "sdl.h": "c",
-        "stdlib.h": "c",
-        "functions.h": "c",
-        "stdio.h": "c"
-    }
-}

@@ -3,7 +3,11 @@
 #include <complex.h>
 #include <math.h>
 #include <SDL2/SDL.h>
-#include "Functions.h"
+#include "../include/Functions.h"
+
+#ifndef M_PI
+    #define M_PI 3.14159265358979323846
+#endif
 
 void InitSDL(SDL_Window** Window, SDL_Renderer** Render)
 {
@@ -64,7 +68,7 @@ void DrawPixelColor(SDL_Renderer* Render, int i, int c, int l)
     
     if(i<iMax)
     {
-        float KR = (2*M_PI)/50; // /50
+        float KR = (2*M_PI)/50;
         float KG = (2*M_PI)/50;
         float KB = (2*M_PI)/50;
 
@@ -76,7 +80,6 @@ void DrawPixelColor(SDL_Renderer* Render, int i, int c, int l)
     SDL_SetRenderDrawColor(Render, R, G, B, A);
     SDL_RenderDrawPoint(Render, c, l);
 }
-
 
 void RenderFractal(SDL_Renderer* Render)
 {

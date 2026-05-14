@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <complex.h>
 #include <SDL2/SDL.h>
-#include "Functions.c"
-
-// Compile command : gcc -I src/include -L src/lib -o main Fractales.c -lmingw32 -lSDL2main -lSDL2
-// Execute : ./main
+#include "Functions.h"
 
 int main( int argc, char* argv[] )
 {
