@@ -29,6 +29,8 @@ OpenGL
 - Windows
 
 ## Project structure
+
+```
 .
 ├── CMakeLists.txt
 ├── include
@@ -39,6 +41,7 @@ OpenGL
 └── src
     ├── Functions.c
     └── main.c
+```
 
 ## How to use ?
 The CMakeLists file already includes a fetching functionnality in case SDL2 isn't already installed in your computer.
@@ -55,7 +58,7 @@ After fixing the number of iterations, you can run the generation using this com
 ```
 ./build/Fractale        # run
 ```
-
+v
 ## Dependencies
 ```
 SDL2 >= 2.30.0     # Used as graphic library
