@@ -1,5 +1,5 @@
-# Fractale
-Simple fractale generator built with C and SDL2 library.
+# Fractal
+Simple fractal generator built with C and SDL2 library.
 
 ## Results
 ### Mandelbrot
