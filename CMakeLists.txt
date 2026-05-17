@@ -24,4 +24,11 @@ add_executable(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME} SDL2::SDL2main SDL2::SDL2 m)
 
+if(WIN32)
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            $<TARGET_FILE:SDL2::SDL2>
+            $<TARGET_FILE_DIR:${PROJECT_NAME}>)
+endif()
+
 target_include_directories(${PROJECT_NAME} PRIVATE include)
