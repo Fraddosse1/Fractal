@@ -11,7 +11,7 @@ if(NOT SDL2_FOUND)
     FetchContent_Declare(
         SDL2
         GIT_REPOSITORY https://github.com/libsdl-org/SDL
-        GIT_TAG release-2.30.0
+        GIT_TAG release-2.32.0
     )
 
     FetchContent_MakeAvailable(SDL2)
@@ -22,6 +22,6 @@ add_executable(${PROJECT_NAME}
     src/Functions.c
 )
 
-target_link_libraries(${PROJECT_NAME} SDL2::SDL2 m)
+target_link_libraries(${PROJECT_NAME} SDL2::SDL2main SDL2::SDL2 m)
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
